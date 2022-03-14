@@ -403,6 +403,13 @@ $(() => {
     const $input = $(window.headerSearch.termInput);
     const $inputContainer = $input.parent();
 
+    // prevent form submit and subsequent page refresh, on enter key
+    $input.on('keydown', (e) => {
+      if (e.code == "Enter") {
+        e.preventDefault();
+      }
+    });
+
     $input.on('keyup cut paste change', () => {
       clearTimeout($input.data('timer'));
       // eslint-disable-next-line @typescript-eslint/no-use-before-define
