@@ -405,7 +405,7 @@ $(() => {
 
     // prevent form submit and subsequent page refresh, on enter key
     $input.on('keydown', (e) => {
-      if (e.code === "Enter" || e.code === "NumpadEnter") {
+      if (e.code === 'Enter' || e.code === 'NumpadEnter') {
         e.preventDefault();
       }
     });
